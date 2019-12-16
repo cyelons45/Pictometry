@@ -1,0 +1,81 @@
+<div>
+    <div class="pictometry_container">
+        <div class="pictometry_iframe_container" id="pictometry_ipa_container">
+            <iframe class="pictometry_iframe" id="pictometry_ipa" src=""></iframe>
+            <div class="deflector_shield" id="pictometry_ipa_overlay"></div>
+
+            <div id="settings_container">
+                <div id="settings_menu">
+                    <div class="menu_contents"></div>
+                </div>
+
+                <div id="layer_settings_menu">
+                    <div class="menu_contents">
+                        <div class="menu_item menu_section_header gray_gradient">
+                            <span>${nls.layers}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="toolbar" id="toolbar1">
+            <div class="toolbar_button toggle_button" id="select_location_toggle_button" data-checked="true" title="Select Location">
+                <div class="toolbar_icon" id="select_location_icon"></div>
+            </div>
+            <div class="toolbar_separator"></div>
+            <div class="toolbar_button" id="show_layer_menu_button" title="Layers"></div>
+            <div class="toolbar_button" id="show_user_options_button" title="Options"></div>
+            <div class="toolbar_button" id="about_button" title="About"></div>
+        </div>
+    </div>
+
+    <div id="about_container" class="modal_background hidden">
+        <div id="about_popup" class="popup" style="width:350px">
+            <div class="header">
+                <div>${nls.about}</div>
+                <div id="close_button" class="close_button" title="Close"></div>
+            </div>
+            <div class="test_build_content">
+                <div class="spacer"></div>
+                <div class="content warning_message">${nls.testBuildWarning}</div>
+            </div>
+            <div class="spacer"></div>
+            <div id="logo">
+                <img src="widgets/Pictometry/images/logo64.png"></img>
+            </div>
+            <div class="content title">
+                <span>${nls.aboutContent1}</span>
+            </div>
+            <div class="spacer"></div>
+            <div class="content">
+                <span>${nls.aboutContent2}</span>
+            </div>
+            <div class="spacer"></div>
+            <div class="content">
+                <span>${nls.copyright}</span>
+            </div>
+            <div class="spacer"></div>
+            <div class="content">
+                <p>
+                    <span>${nls.version}</span>
+                    <span>${manifest.version}</span>
+                </p>
+                <p>
+                    <span>${nls.wabVersion}</span>
+                    <span>${appConfig.wabVersion}</span>
+                </p>
+                <p>
+                    <span>${nls.apiVersion}</span>
+                    <span>${kernel.version}</span>
+                </p>
+                <a href="#" id="view_debug_link" class="test_build_content">View debug information</a>
+            </div>
+            <div class="test_build_content">
+                <div class="spacer"></div>
+                <div class="content warning_message">${nls.testBuildWarning}</div>
+            </div>
+            <div class="footer"></div>
+        </div>
+    </div>
+</div>

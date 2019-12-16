@@ -1,0 +1,86 @@
+{
+  "ipaCredentials" : {
+    "apiKey" : "00BEDA7BF4BBD6C1DA3B3D45CF32F75E",
+    "ipaLoadUrl" : "https://pol.pictometry.com/ipa/v1/load.php",
+    "ipaJsLibUrl" : "https://pol.pictometry.com/ipa/v1/embed/host.php?apikey=00BEDA7BF4BBD6C1DA3B3D45CF32F75E"
+  },
+
+  "signedUrlService" : "https://gis.dhec.sc.gov/signservice/signingservice.asmx/SignUrl",
+
+  "widgetOptions" : {
+    "showFootprint" : true,
+    "showLocation" : true,
+    "showMapLayersOnImage" : true,
+    "autoPan" : true
+  },
+
+  "dashboard" : {
+    "show" : true,
+    "showPanTool" : true,
+
+    "navigation" : {
+      "showZoom" : true,
+      "showRotation" : true,
+      "showImageDate" : true,
+      "showNextPrevious" : true,
+      "showImageFilter" : true
+    },
+
+    "display" : {
+      "showStreetLayer" : true,
+      "layers" : "TBD"
+    },
+
+    "measurements" : {
+      "show" : false,
+      "showAreaTool" : true,
+      "showDistanceTool" : true,
+      "showHeightTool" : true,
+      "showLocationTool" : true,
+      "showElevationTool" : true,
+      "showBearingTool" : true,
+      "showSlopeTool" : true,
+      "showXyzTool" : true,
+      "showUnpinMeasurements" : true,
+      "units" : {
+        "selected" : "english",
+        "metric" : {
+          "distance" : "meters",
+          "angle" : "degrees",
+          "location" : "degrees",
+          "area" : "squareMeters"
+        },
+        "english" : {
+          "distance" : "feet",
+          "angle" : "degrees",
+          "location" : "degrees",
+          "area" : "squareFeet"
+        }
+	  }
+	},
+
+    "identify" : {
+      "showIdentifyPoint" : true,
+      "showIdentifyBox" : true,
+      "showHideAnnotations" : true
+    },
+
+    "exports" : {
+      "showExportImage" : true,
+      "exportImageDate" : false,
+      "exportImageType" : "JPEG",
+      "scaleOnExport" : true,
+      "exportFullImage" : false
+    }
+  },
+
+  "showExportPDF" : true,
+  
+  "userSettings" : {
+    "selectUnits" : true,
+    "configFootprint" : true,
+    "configLocation" : true,
+    "imageToMapSync" : true,
+    "toggleLayers" : true
+  }
+}

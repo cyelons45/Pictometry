@@ -1,0 +1,72 @@
+.category-heading {
+	margin:10px 0 5px 0;
+	font-weight:bold;
+}
+.setting {
+  padding: 0 0 3px 0;
+}
+.text-setting label, .select-setting label, .select-setting span {
+  width: 210px;
+  display: inline-block;
+}
+.settings-table-3 td {
+  width: 250px;
+}
+ul.settings-list {
+  font-size: 0;
+  padding: 0;
+}
+.settings-list li {
+  display: inline-block;
+  font-size: 1rem;
+  width: 200px;
+}
+
+.jimu-widget-pictometry-label {
+  width: 100%;
+  display: block;
+  padding: 0 0 10px 0;
+}
+
+.jimu-widget-pictometry-2x-label {
+  width: 100%;
+  display: block;
+  padding: 0 0 10px 0;
+}
+
+.jimu-widget-pictometry-3x-label {
+  width: 100%;
+  display: block;
+  padding: 0 0 10px 0;
+}
+
+.jimu-widget-pictometry-label span {
+  display: inline-block;
+  width: 210px;
+}
+.jimu-widget-pictometry-2x-label span {
+  display: inline-block;
+  width: 420px;
+}
+
+.jimu-widget-pictometry-3x-label span {
+  display: inline-block;
+  width: 630px;
+}
+
+.jimu-widget-pictometry-dialog-contents {
+  width: 400px;
+  border: 1px solid #b7b7b7;
+  background: #fff;
+  padding: 8px;
+  margin: 0 auto;
+  height: 150px;
+  overflow: auto;
+}
+
+.warning_message {
+  color: red;
+  font-size: large;
+  text-align: center;
+  margin-bottom: 10px;
+}

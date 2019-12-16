@@ -1,0 +1,317 @@
+<div style="width:100%;height:auto;">
+    <div class="warning_message test_build_content">${nls.testBuildWarning}</div>
+    <div data-dojo-type="dijit/layout/TabContainer" style="width: 100%; height: 100%;">
+        <div data-dojo-type="dijit/layout/ContentPane" title="${nls.basicConfiguration}" data-dojo-props="selected:true">
+            <p class="category-heading">${nls.ipaCredentials}</p>
+            <div class="setting text-setting">
+                <label for="api-key-input">${nls.apiKey}</label>
+                <input id="api-key-input" data-dojo-attach-point="apiKeyNode" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-props="required:true, regExp:'[0-9A-F]{32}'" type="text" style="width:300px;">
+            </div>
+            <div class="setting text-setting">
+                <label for="ipa-load-url-input">${nls.ipaLoadUrl}</label>
+                <input id="ipa-load-url-input" data-dojo-attach-point="ipaLoadUrlNode" data-dojo-type="jimu/dijit/URLInput" data-dojo-props="rest:false" type="text" style="width:650px;">
+            </div>
+            <div class="setting text-setting">
+                <label for="ipa-js-lib-url-input">${nls.ipaJsLibUrl}</label>
+                <input id="ipa-js-lib-url-input" data-dojo-attach-point="ipaJsLibUrlNode" data-dojo-type="jimu/dijit/URLInput" data-dojo-props="rest:false" type="text" style="width:650px;">
+            </div>
+            <p class="category-heading">${nls.signingService}</p>
+            <div class="setting text-setting">
+                <label for="signed-url-service-input">${nls.signedUrlService}</label>
+                <input id="signed-url-service-input" data-dojo-attach-point="signedUrlServiceNode" data-dojo-type="jimu/dijit/URLInput" data-dojo-props="rest:false" type="text" style="width:650px;">
+            </div>
+        </div>
+
+        <div data-dojo-type="dijit/layout/ContentPane" title="${nls.widgetBehaviors}">
+            <div data-dojo-attach-point="widgetBehaviorTable"
+                 data-dojo-type="jimu/dijit/SimpleTable"
+                 data-dojo-props='selectable:false,fields:[{name:"setting",title:"${nls.setting}",type:"text",editable:false},
+                {name:"enabled", title:"${nls.enabled}", type:"checkbox", width:"300px", editable:true},
+                {name:"configurable", title:"${nls.userConfigurable}", type:"checkbox", width:"300px", editable:true},
+                {name:"id", type:"text", hidden:true}]'>
+            </div>
+        </div>
+
+        <div data-dojo-type="dijit/layout/ContentPane" title="${nls.dashboard}">
+            <p class="category-heading">${nls.dashboard}</p>
+            <div class="setting">
+                <input id="show-dashboard-check-box" data-dojo-attach-point="showDashboardNode" data-dojo-attach-event="click:onShowDashboardClicked" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                <label for="show-dashboard-check-box">${nls.showDashboard}</label>
+            </div>
+
+            <div data-dojo-attach-point="navigationSpanNode">
+                <p class="category-heading">${nls.navigation}</p>
+                <table class="settings-table-3">
+                    <tr>
+                        <td>
+                            <div class="setting">
+                                <input id="show-pan-tool-check-box" data-dojo-attach-point="showPanToolNode" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                                <label for="show-pan-tool-check-box">${nls.showPanTool}</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="setting">
+                                <input id="show-zoom-check-box" data-dojo-attach-point="showZoomNode" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                                <label for="show-zoom-check-box">${nls.showZoom}</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="setting">
+                                <input id="show-rotation-check-box" data-dojo-attach-point="showRotationNode" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                                <label for="show-rotation-check-box">${nls.showRotation}</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="setting">
+                                <input id="show-image-date-check-box" data-dojo-attach-point="showImageDateNode" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                                <label for="show-image-date-check-box">${nls.showImageDate}</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="setting">
+                                <input id="show-next-previous-check-box" data-dojo-attach-point="showNextPreviousNode" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                                <label for="show-next-previous-check-box">${nls.showNextPrevious}</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="setting">
+                                <input id="show-image-filter-check-box" data-dojo-attach-point="showImageFilterNode" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                                <label for="show-image-filter-check-box">${nls.showImageFilter}</label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <p class="category-heading">${nls.identify}</p>
+                <div class="setting">
+                    <input id="show-identify-point-check-box" data-dojo-attach-point="showIdentifyPointNode" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                    <label for="show-identify-point-check-box">${nls.showIdentifyPoint}</label>
+                </div>
+                <div class="setting">
+                    <input id="show-identify-box-check-box" data-dojo-attach-point="showIdentifyBoxNode" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                    <label for="show-identify-box-check-box">${nls.showIdentifyBox}</label>
+                </div>
+                <div class="setting">
+                    <input id="show-hide-annotations-check-box" data-dojo-attach-point="showHideAnnotationsNode" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                    <label for="show-hide-annotations-check-box">${nls.showHideAnnotations}</label>
+                </div>
+                <p class="category-heading">${nls.export}</p>
+                <div class="setting">
+                    <input id="show-export-pdf-check-box" data-dojo-attach-point="showExportPDFNode" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                    <label for="show-export-pdf-check-box">${nls.showExportPDF}</label>
+                </div>
+            </div>
+        </div>
+
+        <div data-dojo-type="dijit/layout/ContentPane" title="${nls.layersOptions}" data-dojo-props="selected:true">
+            <div>
+                <p class="category-heading">${nls.streetLayer}</p>
+                <div class="setting">
+                    <input id="show-street-layer-check-box" data-dojo-attach-point="showStreetLayerNode" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                    <label for="show-street-layer-check-box">${nls.showStreetLayer}</label>
+                </div>
+                <p class="category-heading">${nls.mapLayers}</p>
+                <div class="setting">
+                    <input id="showMapLayersCheckBox" data-dojo-attach-point="showMapLayersNode" data-dojo-attach-event="click:onShowMapLayersClicked" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                    <label for="showMapLayersCheckBox">${nls.showMapLayers}</label>
+                </div>
+                <div class="setting" data-dojo-attach-point="toggleLayersSpanNode">
+                    <input id="toggleLayersCheckBox" data-dojo-attach-point="toggleLayersNode" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                    <label for="toggleLayersCheckBox">${nls.toggleLayers}</label>
+                </div>
+                <div data-dojo-attach-point="layersTableSpanNode">
+                    <div data-dojo-attach-point="layersTableNode"></div>
+                </div>
+            </div>
+        </div>
+
+        <div data-dojo-type="dijit/layout/ContentPane" title="${nls.units}" data-dojo-props="selected:true">
+            <div class="setting">
+                <input data-dojo-attach-point="selectUnitsNode" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true" id="selectUnitsCheckBox">
+                <label for="selectUnitsCheckBox">${nls.selectUnits}</label>
+            </div>
+
+            <div class="setting select-setting">
+                <label for="default-units-select">${nls.defaultUnits}</label>
+                <div id="default-units-select" data-dojo-attach-point="defaultUnitsNode" data-dojo-type="dijit/form/Select">
+                    <option value="english">${nls.english}</option>
+                    <option value="metric">${nls.metric}</option>
+                </div>
+            </div>
+
+            <p class="category-heading">${nls.metric}</p>
+            <div class="setting select-setting">
+                <label for="metric-distance-units-select">${nls.metricDistanceUnits}</label>
+                <div id="metric-distance-units-select" data-dojo-attach-point="metricDistanceUnitsNode" data-dojo-type="dijit/form/Select">
+                    <option value="millimeters">${nls.millimeters}</option>
+                    <option value="centimeters">${nls.centimeters}</option>
+                    <option value="meters">${nls.meters}</option>
+                    <option value="kilometers">${nls.kilometers}</option>
+                </div>
+            </div>
+            <div class="setting select-setting">
+                <label for="metric-angle-units-select">${nls.metricAngleUnits}</label>
+                <div id="metric-angle-units-select" data-dojo-attach-point="metricAngleUnitsNode" data-dojo-type="dijit/form/Select">
+                    <option value="degrees">${nls.degrees}</option>
+                    <option value="radians">${nls.radians}</option>
+                </div>
+            </div>
+            <div class="setting select-setting">
+                <label for="metric-location-units-select">${nls.metricLocationUnits}</label>
+                <div id="metric-location-units-select" data-dojo-attach-point="metricLocationUnitsNode" data-dojo-type="dijit/form/Select">
+                    <option value="degrees">${nls.degrees}</option>
+                    <option value="radians">${nls.radians}</option>
+                    <option value="degMin">${nls.degMin}</option>
+                    <option value="degMinSec">${nls.degMinSec}</option>
+                </div>
+            </div>
+            <div class="setting select-setting">
+                <label for="metric-area-units-select">${nls.metricAreaUnits}</label>
+                <div id="metric-area-units-select" data-dojo-attach-point="metricAreaUnitsNode" data-dojo-type="dijit/form/Select">
+                    <option value="squareMillimeters">${nls.squareMillimeters}</option>
+                    <option value="squareCentimeters">${nls.squareCentimeters}</option>
+                    <option value="squareMeters">${nls.squareMeters}</option>
+                    <option value="squareKilometers">${nls.squareKilometers}</option>
+                    <option value="hectares">${nls.hectares}</option>
+                </div>
+            </div>
+
+            <p class="category-heading">${nls.english}</p>
+            <div class="setting select-setting">
+                <label for="english-distance-units-select">${nls.englishDistanceUnits}</label>
+                <div id="english-distance-units-select" data-dojo-attach-point="englishDistanceUnitsNode" data-dojo-type="dijit/form/Select">
+                    <option value="inches">${nls.inches}</option>
+                    <option value="feet">${nls.feet}</option>
+                    <option value="yards">${nls.yards}</option>
+                    <option value="miles">${nls.miles}</option>
+                    <option value="nauticalMiles">${nls.nauticalMiles}</option>
+                </div>
+            </div>
+            <div class="setting select-setting">
+                <label for="english-angle-units-select">${nls.englishAngleUnits}</label>
+                <div id="english-angle-units-select" data-dojo-attach-point="englishAngleUnitsNode" data-dojo-type="dijit/form/Select">
+                    <option value="degrees">${nls.degrees}</option>
+                    <option value="radians">${nls.radians}</option>
+                </div>
+            </div>
+            <div class="setting select-setting">
+                <label for="english-location-units-select">${nls.englishLocationUnits}</label>
+                <div id="english-location-units-select" data-dojo-attach-point="englishLocationUnitsNode" data-dojo-type="dijit/form/Select">
+                    <option value="degrees">${nls.degrees}</option>
+                    <option value="radians">${nls.radians}</option>
+                    <option value="degMin">${nls.degMin}</option>
+                    <option value="degMinSec">${nls.degMinSec}</option>
+                </div>
+            </div>
+            <div class="setting select-setting">
+                <label for="english-area-units-select">${nls.englishAreaUnits}</label>
+                <div id="english-area-units-select" data-dojo-attach-point="englishAreaUnitsNode" data-dojo-type="dijit/form/Select">
+                    <option value="squareInches">${nls.squareInches}</option>
+                    <option value="squareFeet">${nls.squareFeet}</option>
+                    <option value="squareYards">${nls.squareYards}</option>
+                    <option value="squareMiles">${nls.squareMiles}</option>
+                    <option value="acres">${nls.acres}</option>
+                </div>
+            </div>
+        </div>
+
+        <div data-dojo-type="dijit/layout/ContentPane" title="${nls.restrictedTools}" data-dojo-props="selected:true">
+            <div class="setting">
+                <input id="show-measurement-tools-checkbox" data-dojo-attach-point="showMeasurementToolsNode" data-dojo-attach-event="click:onShowMeasurementToolsClicked" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                <label for="show-measurement-tools-checkbox">${nls.showMeasurementTools}</label>
+            </div>
+
+            <div data-dojo-type="dijit/Dialog" class="jimu-widget-pictometry-dialog" data-dojo-attach-point='confirmNonPublicDialog' title='${nls.warning}'>
+                <div class="jimu-widget-pictometry-dialog-contents">
+                    ${nls.showMeasurementsWarning}
+                </div>
+                <br/>
+                <table>
+                    <tr>
+                        <td>
+                            <button data-dojo-type="dijit/form/Button" data-dojo-attach-event="click:onShowMeasurementsCancelClicked">
+                                ${nls.cancelShowMeasurementTools}
+                            </button>
+                        </td>
+                        <td>
+                            <button data-dojo-type="dijit/form/Button" data-dojo-attach-event="click:onShowMeasurementsOkClicked">
+                                ${nls.okShowMeasurementTools}
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div data-dojo-attach-point="measurementToolsSpanNode">
+                <ul class="settings-list">
+                    <li class="setting">
+                        <input id="show-area-tool-checkbox" data-dojo-attach-point="showAreaToolNode" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                        <label for="show-area-tool-checkbox">${nls.showAreaTool}</label>
+                    </li>
+                    <li class="setting">
+                        <input id="show-distance-tool-checkbox" data-dojo-attach-point="showDistanceToolNode" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                        <label for="show-distance-tool-checkbox">${nls.showDistanceTool}</label>
+                    </li>
+                    <li class="setting">
+                        <input id="show-height-tool-checkbox" data-dojo-attach-point="showHeightToolNode" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                        <label for="show-height-tool-checkbox">${nls.showHeightTool}</label>
+                    </li>
+                    <li class="setting">
+                        <input id="show-location-tool-checkbox" data-dojo-attach-point="showLocationToolNode" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                        <label for="show-location-tool-checkbox">${nls.showLocationTool}</label>
+                    </li>
+                    <li class="setting">
+                        <input id="show-elevation-tool-checkbox" data-dojo-attach-point="showElevationToolNode" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                        <label for="show-elevation-tool-checkbox">${nls.showElevationTool}</label>
+                    </li>
+                    <li class="setting">
+                        <input id="show-bearing-tool-checkbox" data-dojo-attach-point="showBearingToolNode" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                        <label for="show-bearing-tool-checkbox">${nls.showBearingTool}</label>
+                    </li>
+                    <li class="setting">
+                        <input id="show-slope-tool-checkbox" data-dojo-attach-point="showSlopeToolNode" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                        <label for="show-slope-tool-checkbox">${nls.showSlopeTool}</label>
+                    </li>
+                    <li class="setting">
+                        <input id="show-xyz-tool-checkbox" data-dojo-attach-point="showXyzToolNode" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                        <label for="show-xyz-tool-checkbox">${nls.showXyzTool}</label>
+                    </li>
+                </ul>
+
+                <div class="setting">
+                    <input id="show-unpin-measurements-checkbox" data-dojo-attach-point="showUnpinMeasurementsNode" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                    <label for="show-unpin-measurements-checkbox">${nls.showUnpinMeasurements}</label>
+                </div>
+                <div class="setting">
+                    <input id="show-export-image-checkbox" data-dojo-attach-point="showExportImageNode" data-dojo-attach-event="click:onShowExportImageClicked" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                    <label for="show-export-image-checkbox">${nls.showExportImage}</label>
+                </div>
+                <p class="category-heading">${nls.exportSettings}</p>
+                <div class="setting">
+                     <input id="export-image-date-checkbox" data-dojo-attach-point="exportImageDateNode" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                     <label for="export-image-date-checkbox">${nls.exportImageDate}</label>
+                </div>
+                <div data-dojo-attach-point="exportImageSpanNode">
+                    <div class="setting select-setting">
+                         <label for="export-image-type-select">${nls.exportImageType}</label>
+                         <div id="export-image-type-select" data-dojo-attach-point="exportImageTypeNode" data-dojo-type="dijit/form/Select">
+                             <option value="JPEG">${nls.imageTypeJPEG}</option>
+                             <option value="GIF">${nls.imageTypeGIF}</option>
+                             <option value="TIFF">${nls.imageTypeTIFF}</option>
+                             <option value="PNG">${nls.imageTypePNG}</option>
+                         </div>
+                    </div>
+                    <div class="setting">
+                         <input id="scale-on-export-checkbox" data-dojo-attach-point="scaleOnExportNode" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                         <label for="scale-on-export-checkbox">${nls.scaleOnExport}</label>
+                    </div>
+                    <div class="setting">
+                         <input id="export-full-image-checkbox" data-dojo-attach-point="exportFullImageNode" data-dojo-type="dijit/form/CheckBox" type="checkbox" value="true">
+                         <label for="export-full-image-checkbox">${nls.exportFullImage}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
